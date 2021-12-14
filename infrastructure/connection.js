@@ -1,11 +1,10 @@
-//const mysql = require('mysql');
+const mariadb = require('mariadb');
 
-//const connection = mysql.createConnection({
-//    host: 'localhost',
-//    port: 3306,
-//    user: 'root',
-//    password: '',
-//    database:'fpope'
-//});
-//
-//module.exports = connection;
+const connection = mariadb.createPool({
+    host: 'HOSTNAME', 
+    user:'USER', 
+    password: 'PASSWORD',
+    connectionLimit: '?',
+});
+
+module.exports = connection;
