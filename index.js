@@ -4,22 +4,14 @@ const Database = require('./infrastructure/database.js');
 
 const port = 5600;
 
-connection.connect(
-    (err) =>{
-        if(err){
-            console.log(err);
-        } else {
-            console.log('Connected to the database');
+try {
+    connection.getConnection().then((res) => {
+        console.log(`Connected to database: ${res}`);
+    }).catch((err) => {
+        console.log(err);
+    });
+} catch (error) {
+    console.log(error);
+}
 
-            const app = utilSettings();
-
-            Database.init(connection);
-
-            app.listen(port, ()=> {
-                console.log('Server is running on port ' + port);
-            });
-
-        }
-    }
-);
 
