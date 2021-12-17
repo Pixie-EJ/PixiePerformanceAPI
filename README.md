@@ -3,8 +3,9 @@ API for Pixie Performance
 
 # Passos para configurar ambiente:
 
-1 - Acessar o WAMP e rodar 'Start All Services'
-2 - Acessar o MySQL Workbench
+1 - Acessar o WAMP e rodar 'Start All Services'<br /><br />
+
+2 - Acessar o MySQL Workbench<br />
     2.1 - Criar uma conexão no símbolo de '+' na tela home
     2.2 - Adicionar um nome qualquer e a porta
         2.2.1 - Por padrão o WAMP abre a porta em '3307'
