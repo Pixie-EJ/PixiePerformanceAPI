@@ -5,12 +5,12 @@ class Database {
     }
 
     createDatabase(){
-        const sql = `CREATE /*NOME BANCO*/ IF NOT EXISTS ...`;
+        const sql = `CREATE DATABASE IF NOT EXISTS gerenciador_pontos`;
         this.connection.query(sql, (err) => {
             if(err) {
-                console.log(err);
+                console.log('Erro ao tentar criar BD');
             } else {
-                console.log("Database not exists, creating...");
+                console.log('BD CONECTADO')
             }
         });
     }

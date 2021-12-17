@@ -1,10 +1,10 @@
-const mariadb = require('mariadb');
+const mariadb = require('mariadb/callback');
 
-const connection = mariadb.createPool({
-    host: 'HOSTNAME', 
-    user:'USER', 
-    password: 'PASSWORD',
-    connectionLimit: '?',
+const connection = mariadb.createConnection({
+    host: '127.0.0.1', 
+    port: '3307',
+    user:'root', 
+    password: '',
 });
 
 module.exports = connection;

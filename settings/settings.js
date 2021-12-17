@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const consign = require('consign');
-const { router } = require('../routes');
+const router = require('../routes');
 
 module.exports = () => {
     const app = express();

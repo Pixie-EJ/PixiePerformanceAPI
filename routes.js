@@ -1,12 +1,19 @@
-import { Router } from 'express';
+const express = require('express');
+const bodyParser = require('body-parser');
+const router = express.Router();
+const jsonParser = bodyParser.json()
+// const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-import { CreateEventController } from './controllers/Events/CreateEventController';
-import { GetMemberController } from './controllers/Members/GetMemberController';
+// importar aqui os controllers
+const ExampleMemberNameController = require('./controllers/Example/ExampleMemberNameController');
 
-const router = Router();
 
-router.post("/events/create", new CreateEventController().handle);
+// 1 - utilizar .get para buscar infos e .post para cadastrar infos
+// 2 - o primeiro parâmetro é a rota, pode ser escolhido qualquer nome
+// 3 - o segundo parâmetro é utilizado das rotas POST
+// 4 - no último parâmetro, basta acessar a função do controller que faz o desejado  
+router.get("/membersName", new ExampleMemberNameController().handleGetMemberName);
 
-router.get("/members", new GetMemberController().handle);
+router.post("/membersName/create", jsonParser, new ExampleMemberNameController().handleCreateMemberName);
 
-export { router }
+module.exports = router;
