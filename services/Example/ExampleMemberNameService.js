@@ -24,8 +24,10 @@ class ExampleMemberNameService {
     }   
 
     async createMemberName(name, res) {
-        const sql = `INSERT INTO membersName (name) VALUES ('${name}')`;
-        await connection.query(sql, (err, results) => {
+        // passar os parâmetros da query com um ?
+        const sql = `INSERT INTO membersName (name) VALUES (?)`;
+        // segundo parâmetro é um array com os parâmetros da query acima
+        await connection.query(sql, [name],(err, results) => {
             if (err) {
                 return 'err';
             }
