@@ -7,6 +7,7 @@ const jsonParser = bodyParser.json()
 // importar aqui os controllers
 const ExampleMemberNameController = require('./controllers/Example/ExampleMemberNameController');
 const CategoryController = require('./controllers/CategoryController');
+const RuleController = require('./controllers/RuleController');
 
 
 // 1 - utilizar .get para buscar infos e .post para cadastrar infos
@@ -14,6 +15,8 @@ const CategoryController = require('./controllers/CategoryController');
 // 3 - o segundo parâmetro é utilizado das rotas POST
 // 4 - no último parâmetro, basta acessar a função do controller que faz o desejado  
 router.get("/membersName", new ExampleMemberNameController().handleGetMemberName);
+
+router.get("/rules", new RuleController().handleGetRule);
 
 router.post("/membersName/create", jsonParser, new ExampleMemberNameController().handleCreateMemberName);
 

@@ -1,4 +1,4 @@
-const connection = require("../../infrastructure/connection");
+const connection = require("../infrastructure/connection");
 
 class CategoryService {
 
