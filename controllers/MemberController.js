@@ -1,6 +1,13 @@
 const MemberService = require('../services/memberService');
 
 class MemberController {
+
+    handleGetMember(request, response) {
+        const service = new MemberService();
+        service.getMember((res) => {            
+            return response.json(res)
+        })            
+    }
     
     handleCreateMember(request, response) {
         

@@ -19,6 +19,8 @@ router.get("/membersName", new ExampleMemberNameController().handleGetMemberName
 
 router.get("/rules", new RuleController().handleGetRule);
 
+router.get("/members", new MemberController().handleGetMember);
+
 router.post("/membersName/create", jsonParser, new ExampleMemberNameController().handleCreateMemberName);
 
 router.post("/category/create", jsonParser, new CategoryController().handleCreateCategory);
