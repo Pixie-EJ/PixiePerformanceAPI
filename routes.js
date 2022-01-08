@@ -25,4 +25,6 @@ router.post("/category/create", jsonParser, new CategoryController().handleCreat
 
 router.post("/members/create", jsonParser, new MemberController().handleCreateMember);
 
+router.post("/rules/create", jsonParser, new RuleController().handleCreateRule);
+
 module.exports = router;
