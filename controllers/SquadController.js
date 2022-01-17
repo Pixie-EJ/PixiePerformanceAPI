@@ -5,10 +5,10 @@ class SquadController {
     handleCreateSquad(request, response) {
         
         const service = new SquadService();
-        const body = request.body;
+        const {body} = request;
         
-        service.create(response, body).then(result => {
-            response.send(result);
+        service.create(body, (res) => {
+            return response.json(res)
         });
 
     }
