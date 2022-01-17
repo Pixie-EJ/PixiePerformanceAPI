@@ -1,8 +1,8 @@
-const connection = require("../../infrastructure/connection");
+const connection = require("../infrastructure/connection");
 
 class SquadService {
 
-  async create(res, body) {
+  async create(body, res){
     const sql =
       "INSERT INTO teams (name, enterprises_id) VALUES (?,?)";
 
