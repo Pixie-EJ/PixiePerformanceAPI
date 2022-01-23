@@ -34,6 +34,6 @@ router.post("/members/create", allowCors, jsonParser, new MemberController().han
 
 router.post("/rules/create", allowCors, jsonParser, new RuleController().handleCreateRule);
 
-router.get("/points", allowCors, jsonParser, new PointController().handleGetCards);
+router.get("/points",  cors({origin: 'http://localhost:3000'}), jsonParser, new PointController().handleGetCards);
 
 module.exports = router;

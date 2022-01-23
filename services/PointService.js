@@ -24,7 +24,7 @@ class PointService {
                         }
                     })
                 })
-                percentage = (total/expected)*100
+                percentage = parseInt((total/expected)*100);
                 cards = [expected, total, percentage];
             });
             setTimeout(() => {
