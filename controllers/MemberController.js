@@ -1,23 +1,22 @@
-const MemberService = require('../services/memberService');
+const MemberService = require('../services/MemberService');
 
 class MemberController {
 
     handleGetMember(request, response) {
         const service = new MemberService();
-        service.getMember((res) => {            
+        service.get((res) => {            
             return response.json(res)
-        })            
+        })      
     }
     
-    handleCreateMember(request, response) {
-        
-        const service = new MemberService();
+    handleCreateMember(request, response) { 
+        const service = new Tourada();
         const body = request.body;
-        
         service.create(body,  (res) => {
             return response.json(res)
         })    
     }
+
 }
 
 module.exports = MemberController;

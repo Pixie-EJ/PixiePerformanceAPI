@@ -1,7 +1,7 @@
 const connection = require('../infrastructure/connection');
 
 class MemberService {
-    async getMember(res) {        
+    async get(res) {        
         const sql = 'SELECT * FROM members';        
         await connection.query(sql, (err, results) => {            
             if (err) {
@@ -24,7 +24,7 @@ class MemberService {
                 return res(results);
             });
         });
-    }   
+    }
 }
 
 module.exports = MemberService;
