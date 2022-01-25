@@ -10,6 +10,7 @@ const ExampleMemberNameController = require('./controllers/Example/ExampleMember
 const CategoryController = require('./controllers/CategoryController');
 const RuleController = require('./controllers/RuleController');
 const MemberController = require('./controllers/MemberController');
+const SquadController = require('./controllers/SquadController');
 
 const origin = 'localhost:3000'
 const allowCors = cors({origin})
@@ -32,5 +33,7 @@ router.post("/category/create", allowCors, jsonParser, new CategoryController().
 router.post("/members/create", allowCors, jsonParser, new MemberController().handleCreateMember);
 
 router.post("/rules/create", allowCors, jsonParser, new RuleController().handleCreateRule);
+
+router.post("/squad/create", jsonParser, new SquadController().handleCreateSquad);
 
 module.exports = router;
