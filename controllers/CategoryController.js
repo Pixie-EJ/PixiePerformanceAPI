@@ -1,14 +1,14 @@
-const CategoryService = require('../services/categoryService');
+const CategoryService = require('../services/CategoryService');
 
 class CategoryController {
     
     handleCreateCategory(request, response) {
         
         const service = new CategoryService();
-        const body = request.body;
+        const {body} = request;
         
-        service.create(response, body).then(result => {
-            response.send(result);
+        service.create(body, (res) => {
+            return response.json(res)
         });
 
     }
