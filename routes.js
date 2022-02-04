@@ -10,6 +10,7 @@ const ExampleMemberNameController = require('./controllers/Example/ExampleMember
 const CategoryController = require('./controllers/CategoryController');
 const RuleController = require('./controllers/RuleController');
 const MemberController = require('./controllers/MemberController');
+const PointController = require('./controllers/PointController');
 const SquadController = require('./controllers/SquadController');
 
 const origin = 'localhost:3000'
@@ -24,7 +25,7 @@ router.get("/membersName", new ExampleMemberNameController().handleGetMemberName
 
 router.get("/rules", allowCors, new RuleController().handleGetRule);
 
-router.get("/members", allowCors, new MemberController().handleGetMember);
+router.get("/members", cors({origin: 'http://localhost:3000'}), new MemberController().handleGetMember);
 
 router.post("/membersName/create", allowCors, jsonParser, new ExampleMemberNameController().handleCreateMemberName);
 
@@ -33,6 +34,8 @@ router.post("/category/create", allowCors, jsonParser, new CategoryController().
 router.post("/members/create", allowCors, jsonParser, new MemberController().handleCreateMember);
 
 router.post("/rules/create", allowCors, jsonParser, new RuleController().handleCreateRule);
+
+router.get("/points",  cors({origin: 'http://localhost:3000'}), jsonParser, new PointController().handleGetCards);
 
 router.post("/squad/create", jsonParser, new SquadController().handleCreateSquad);
 
