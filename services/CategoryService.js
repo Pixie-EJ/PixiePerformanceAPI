@@ -2,7 +2,7 @@ const connection = require("../infrastructure/connection");
 
 class CategoryService {
 
-  async create(res, body) {
+  async create(body, res){
     const sql =
       "INSERT INTO categories (name, description, enterprises_id) VALUES (?,?,?)";
 
