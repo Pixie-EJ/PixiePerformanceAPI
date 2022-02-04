@@ -11,6 +11,7 @@ const CategoryController = require('./controllers/CategoryController');
 const RuleController = require('./controllers/RuleController');
 const MemberController = require('./controllers/MemberController');
 const PointController = require('./controllers/PointController');
+const SquadController = require('./controllers/SquadController');
 
 const origin = 'localhost:3000'
 const allowCors = cors({origin})
@@ -35,5 +36,7 @@ router.post("/members/create", allowCors, jsonParser, new MemberController().han
 router.post("/rules/create", allowCors, jsonParser, new RuleController().handleCreateRule);
 
 router.get("/points",  cors({origin: 'http://localhost:3000'}), jsonParser, new PointController().handleGetCards);
+
+router.post("/squad/create", jsonParser, new SquadController().handleCreateSquad);
 
 module.exports = router;

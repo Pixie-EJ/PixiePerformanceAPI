@@ -1,16 +1,16 @@
 const connection = require("../infrastructure/connection");
 
-class CategoryService {
+class SquadService {
 
   async create(body, res){
     const sql =
-      "INSERT INTO categories (name, description, enterprises_id) VALUES (?,?,?)";
+      "INSERT INTO teams (name, enterprises_id) VALUES (?,?)";
 
-    const {name, description, enterprises_id} = body;
+    const {name, enterprises_id} = body;
 
     await connection.query(
       sql,
-      [name, description, enterprises_id],
+      [name, enterprises_id],
       (err, results) => {
         if (err) {
           return err;
@@ -24,4 +24,4 @@ class CategoryService {
   }
 }
 
-module.exports = CategoryService;
+module.exports = SquadService;
