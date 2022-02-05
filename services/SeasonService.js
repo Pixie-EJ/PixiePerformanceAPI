@@ -1,7 +1,7 @@
 const connection = require('../infrastructure/connection');
 
 class SeasonService{
-    async create(res, body){
+    async create(body, res){
         const sql = "INSERT INTO seasons (name, description, started_at, ended_at, enterprises_id) VALUES (?,?,?,?,?)";
         const {name, description, started_at, ended_at, enterprises_id} = body;
         await connection.query(
