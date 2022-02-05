@@ -19,5 +19,18 @@ class SeasonService{
         )
 
     }
+
+    async getSeason(res) {
+        const sql = 'SELECT * FROM seasons';
+        await connection.query(sql, (err, results) => {
+            if (err) {
+                return err;
+            }
+            setTimeout(() => {
+                return res(results);
+            });
+        });
+    }   
+
 }
 module.exports = SeasonService;

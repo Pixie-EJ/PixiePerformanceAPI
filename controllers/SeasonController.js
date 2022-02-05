@@ -8,5 +8,12 @@ class SeasonController {
             return response.json(res)
         })            
     }
+    handleGetSeason(request, response) {
+        const service = new SeasonService();
+        service.getSeason((res) => {
+            return response.json(res)
+        })            
+    }
+
 }
 module.exports = SeasonController;

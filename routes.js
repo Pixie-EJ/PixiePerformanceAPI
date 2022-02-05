@@ -20,6 +20,8 @@ router.get("/membersName", new ExampleMemberNameController().handleGetMemberName
 
 router.get("/rules", new RuleController().handleGetRule);
 
+router.get("/season", new SeasonController().handleGetSeason);
+
 router.post("/membersName/create", jsonParser, new ExampleMemberNameController().handleCreateMemberName);
 
 router.post("/category/create", jsonParser, new CategoryController().handleCreateCategory);
