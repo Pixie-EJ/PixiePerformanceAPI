@@ -9,6 +9,7 @@ const ExampleMemberNameController = require('./controllers/Example/ExampleMember
 const CategoryController = require('./controllers/CategoryController');
 const RuleController = require('./controllers/RuleController');
 const MemberController = require('./controllers/MemberController');
+const SeasonController = require('./controllers/SeasonController');
 
 
 // 1 - utilizar .get para buscar infos e .post para cadastrar infos
@@ -24,5 +25,7 @@ router.post("/membersName/create", jsonParser, new ExampleMemberNameController()
 router.post("/category/create", jsonParser, new CategoryController().handleCreateCategory);
 
 router.post("/members/create", jsonParser, new MemberController().handleCreateMember);
+
+router.post("/season/create", jsonParser, new SeasonController().handleCreateSeason);
 
 module.exports = router;
