@@ -22,6 +22,18 @@ class CategoryService {
       }
     );
   }
+
+  async get(res){
+    const sql = 'SELECT * FROM categories';
+    await connection.query(sql, (err, results) => {            
+      if (err) {
+          return err;
+      }   
+      setTimeout(() => {         
+          return res(results);
+      });
+    });
+  }
 }
 
 module.exports = CategoryService;

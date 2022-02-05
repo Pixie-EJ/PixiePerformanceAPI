@@ -2,7 +2,7 @@
 const connection = require('../../infrastructure/connection');
 
 // criação de classe para ser exportada
-class ExampleMemberNameService {
+class ExampleMemberNameService { 
     // criação da função a ser utilizada no controller
     // sempre passar o res como parâmetro
     async getMemberName(res) {
